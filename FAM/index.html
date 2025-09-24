@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Faith Anchors Ministers - Attendance</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+      <img src="fam.jpg" alt="fam logo" class="logo">
+
+    
+    <h1>Faith Anchors Ministers</h1>
+    <h2>Wednesday Fellowship Attendance</h2>
+    <button id="logoutBtn" class="hidden">Logout</button>
+  </header>
+
+  <!-- LOGIN -->
+  <section id="login" class="container">
+    <h2>Login</h2>
+    <form id="loginForm" class="card">
+      <input type="text" id="username" placeholder="Username" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <select id="role" required>
+        <option value="">Select Role</option>
+        <option value="member">Member</option>
+        <option value="admin">Admin</option>
+      </select>
+      <button type="submit">Login</button>
+      <p id="loginMessage" class="message"></p>
+    </form>
+  </section>
+
+  <!-- REGISTRATION -->
+  <section id="register" class="container">
+    <h2>Create Account</h2>
+    <form id="registerForm" class="card">
+      <input type="text" id="regUsername" placeholder="Choose a username" required />
+      <input type="password" id="regPassword" placeholder="Choose a password" required />
+      <select id="regRole" required>
+        <option value="">Select Role</option>
+        <option value="member">Member</option>
+        <option value="admin">Admin</option>
+      </select>
+      <button type="submit">Register</button>
+      <p id="registerMessage" class="message"></p>
+    </form>
+  </section>
+
+  <!-- ATTENDANCE FORM -->
+  <section id="attendance" class="container hidden">
+    <h2>Sign Attendance</h2>
+      <p><em>⚠️ Attendance is only open on Wednesdays.</em></p>
+    <form id="attendanceForm" class="card">
+      <input type="text" id="memberName" placeholder="Your Name" readonly required />
+      <input type="text" id="memberId" placeholder="Member ID (optional)" />
+      <button type="submit">Sign Attendance</button>
+      <section id="attendance" class="container hidden">
+
+    </form>
+  </section>
+
+  <!-- ATTENDANCE RECORDS (ADMIN ONLY) -->
+  <section id="records" class="hidden container">
+    <h2>Attendance Records</h2>
+    <button id="exportBtn">Export to Excel</button>
+    <button id="clearBtn">Clear Records</button>
+    <table id="attendanceTable">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Member Name</th>
+          <th>Date</th>
+          <th>Time</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
